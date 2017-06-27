@@ -6,8 +6,8 @@
 * [Fast Offline Angular Apps with Service Workers](https://coryrylan.com/blog/fast-offline-angular-apps-with-service-workers)
 * [The offline cookbook](https://jakearchibald.com/2014/offline-cookbook/)
 
-### <ng-container>
-The Angular <ng-container> is a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
+### ```<ng-container>```
+The Angular ```<ng-container>``` is a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
 ```html
 <p>
   I turned the corner
@@ -18,8 +18,8 @@ The Angular <ng-container> is a grouping element that doesn't interfere with sty
 </p>
 ```
 
-### <ng-content>
-The <ng-content> tag is a placeholder for the external content. It tells Angular where to insert that content.
+### ```<ng-content>```
+The ```<ng-content>``` tag is a placeholder for the external content. It tells Angular where to insert that content.
 ```html
   <div class='project-class'>
     ProjectClass
