@@ -21,6 +21,8 @@ The Angular ```<ng-container>``` is a grouping element that doesn't interfere wi
 ### ```<ng-content>```
 The ```<ng-content>``` tag is a placeholder for the external content. It tells Angular where to insert that content.
 ```html
+// Using the component
+<foo-bar>
   <div class='project-class'>
     ProjectClass
   </div>
@@ -32,9 +34,11 @@ The ```<ng-content>``` tag is a placeholder for the external content. It tells A
   <div projectAttr>
     ProjectAttr
   </div>
+ </foo-bar>
  ``` 
  
  ```html
+ // Component template
   <ng-content select=".project-class"> </ng-content>
   <ng-content select="[projectAttr]"> </ng-content>
   <ng-content select="div"> </ng-content>
