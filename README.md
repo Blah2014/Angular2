@@ -39,7 +39,7 @@ The ```<ng-content>``` tag is a placeholder for the external content. It tells A
  
  ```html
  // Component template
-  <ng-content select=".project-class"> </ng-content>
-  <ng-content select="[projectAttr]"> </ng-content>
-  <ng-content select="div"> </ng-content>
+<ng-content select=".project-class"> </ng-content>
+<ng-content select="[projectAttr]"> </ng-content>
+<ng-content select="div"> </ng-content>
 ```
