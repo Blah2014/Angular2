@@ -7,9 +7,10 @@
 * [The offline cookbook](https://jakearchibald.com/2014/offline-cookbook/)
 
 ### Angular Mobile Toolkit
-
+* [Automatic Progressive Web Apps](https://mobile.angular.io)
 
 ### Angular CLI
+* [A command line interface for Angular](https://cli.angular.io)
 
 ### ```<ng-container>```
 The Angular ```<ng-container>``` is a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
