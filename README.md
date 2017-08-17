@@ -49,3 +49,21 @@ The ```<ng-content>``` tag is a placeholder for the external content. It tells A
 <ng-content select="[projectAttr]"> </ng-content>
 <ng-content select="div"> </ng-content>
 ```
+
+### Angular2 - catch/subscribe to (click) event in dynamically added HTML  
+Declarative event binding is only supported in static HTML in a components template.
+If you want to subscribe to events of elements dynamically added, you need to do it imperatively.
+```
+elementRef.nativeElement.querySelector(...).addEventListener(...)
+```
+or similar.
+
+If you want to be WebWorker-safe, you can inject the Renderer
+```
+constructor(private elementRef:ElementRef, private renderer:Renderer) {}
+```
+and use instead
+```
+this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => { handleClick(event);});
+```
+to register an event handler.
