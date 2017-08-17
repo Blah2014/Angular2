@@ -67,3 +67,10 @@ and use instead
 this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => { handleClick(event);});
 ```
 to register an event handler.
+
+You can use ```listenGlobal``` that will give you access to ```document```, ```body```, etc.
+```
+this.renderer.listenGlobal('document', 'click', (event) => {
+  // Do something with 'event'
+});
+```
