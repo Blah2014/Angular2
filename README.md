@@ -74,3 +74,35 @@ this.renderer.listenGlobal('document', 'click', (event) => {
   // Do something with 'event'
 });
 ```
+
+Note that since ```beta.2``` both ```listen``` and ```listenGlobal``` return a function to remove the listener. This is to avoid memory leaks in big applications.
+```
+// listenFunc will hold the function returned by "renderer.listen"
+listenFunc: Function;
+
+// globalListenFunc will hold the function returned by "renderer.listenGlobal"
+globalListenFunc: Function;
+
+constructor(elementRef: ElementRef, renderer: Renderer) {
+
+    // We cache the function "listen" returns
+    this.listenFunc = renderer.listen(elementRef.nativeElement, 'click', (event) => {
+        // Do something with 'event'
+    });
+
+    // We cache the function "listenGlobal" returns
+    this.globalListenFunc = renderer.listenGlobal('document', 'click', (event) => {
+        // Do something with 'event'
+    });
+}
+
+ngOnDestroy() {
+    // We execute both functions to remove the respectives listeners
+
+    // Removes "listen" listener
+    this.listenFunc();
+
+    // Removs "listenGlobal" listener
+    this.globalListenFunc();
+}
+```
