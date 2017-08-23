@@ -164,5 +164,30 @@ this.test(false)
         (error) => {
             console.log(error);
         }
-    )
+    );
+```
+
+Don't forget to ```unsubscribe()``` or ```takeWhile()```
+
+### Promise
+```
+test(val): Promise<any> {
+      return new Promise((resolve, reject) => {
+          if(val) {
+              resolve('success');
+          } else {
+              reject('error');
+          }
+      });
+  }
+  
+this.test(false)
+    .then(
+        (success) => {
+            console.log(success);
+        },
+        (error) => {
+            console.log(error);
+        }
+    );
 ```
