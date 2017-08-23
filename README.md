@@ -141,3 +141,28 @@ export class MyComponent implements OnDestroy, OnInit {
 First, I defined a private boolean variable named ```alive``` that is set to true. Next, we provide a function to the ```takeWhile()``` operator that returns the boolean value (that is initially true). Finally, we set the value of ```alive``` to ```false``` when the component is destroyed.
 
 As you can see, the ```takeWhile()``` operator is an excellent solution to unsubscribing from an observable subscription as part of Angular’s component lifecycle.
+
+### Observable
+```
+import { Observable } from 'rxjs/Observable'
+
+test(val): Observable<any> {
+    return new Observable((observable) => {
+        if(val) {
+            observable.next('success');
+        } else {
+            observable.error('error');
+        }
+    });
+}
+
+this.test(false)
+    .subscribe(
+        (success) => {
+            console.log(success);
+        },
+        (error) => {
+            console.log(error);
+        }
+    )
+```
